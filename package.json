@@ -1,5 +1,5 @@
 {
-  "name": "desafio-sass",
+  "name": "WEBSITE HIPPO TALES",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mlastarria/segundaentrega.git"
+    "url": "git+https://github.com/mlastarria/codermauricio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mlastarria/segundaentrega/issues"
+    "url": "https://github.com/mlastarria/codermauricio/issues"
   },
-  "homepage": "https://github.com/mlastarria/segundaentrega#readme",
+  "homepage": "https://github.com/mlastarria/codermauricio#readme",
   "devDependencies": {
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.15"

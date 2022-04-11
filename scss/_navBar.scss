@@ -1,84 +1,113 @@
 
-/* Header Mobile */
+/* Header (logo y menu) */
 
 header{
-    grid-area:header;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    animation: animacion--header 1s ease 0s 1 normal forwards;
+  grid-area:header;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  animation: animacion--header 1s ease 0s 1 normal forwards;
+   
+  //Breakpoint Desktop
+  @media only screen and (min-width: 1024px){
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 0 auto;
   }  
+
+}  
+
+
+
+//Esta es la animacion del header, que va de arriba hacia abajo
+@keyframes animacion--header {
   
-  @keyframes animacion--header {
-    0% {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
   }
   
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   
+
+
   
+.logo{
+  align-self: center;
+  margin-top: 15px;
+
+
   
+
+
+}
   
-  .logo{
+
+
+.logo img {
+  height: 90px;
+
+  //Breakpoint Desktop
+  @media only screen and (min-width: 1024px){
+    height: 85px;
     align-self: center;
-    margin-top: 15px;
+  }
+
+}
+  
+  
+  
+//En este menu se estan utilizando mixin, map y nesting
+
+.menu{
+  padding: 1em;
+  font-family: $fontMenu;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @mixin navHippo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+  ul{
+    @include navHippo;
   }
   
   
-  .logo img {
-    height: 90px;
+  li a{
+    color: map-get($map: $paletaColores, $key:'color6' );
+    display: block;
+    text-decoration: none;
+    padding: .5em 1em;
+    font-family:$fontMenu;
+    transition: 0.15s;
   }
-  
-  
-  
-  .menu{
-    padding: 1em;
-    font-family: "roboto", sans-serif;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-      @mixin navHippo {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-
-
-
-      ul{
-        @include navHippo;
-      }
-  
-  
-
-
-      li a{
-        color: #2F2A2C;
-        display: block;
-        text-decoration: none;
-        padding: .5em 1em;
-        font-family:"roboto", sans-serif;
-      }
 
   
-      li a:hover{
-        background: #07ad33;
-        color: white;
-        border-radius: 7px;
-      }
+  li a:hover{
+    background: map-get($map: $paletaColores, $key:'color4' );
+    color: white;
+    border-radius: 7px;
+  }
+
+  //Breakpoint Desktop
+  @media only screen and (min-width: 1024px){
+    align-self: center;
+  }
             
-  }
+}
   
   
   
