@@ -41,15 +41,12 @@ body {
 header {
   grid-area: header;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto 0 auto;
   animation: animacion--header 1s ease 0s 1 normal forwards; }
-  @media only screen and (min-width: 1024px) {
-    header {
-      flex-direction: row;
-      justify-content: space-between;
-      width: 80%;
-      margin: 0 auto 0 auto; } }
 
 @keyframes animacion--header {
   0% {
@@ -98,9 +95,66 @@ header {
     .menu {
       align-self: center; } }
 
+/* [DESKTOP] */
+/* (A) WRAPPER */
+#hamnav {
+  width: 100%; }
+
+/* (B) HORIZONTAL MENU ITEMS */
+#hamitems {
+  display: flex; }
+
+#hamitems a {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+  transition: 0.15s; }
+
+#hamitems a:hover {
+  background: #36CC60;
+  color: white;
+  border-radius: 7px; }
+
+/* (C) HIDE HAMBURGER */
+#hamnav label, #hamburger {
+  display: none; }
+
+/* [ON SMALL SCREENS] */
+@media screen and (max-width: 1024px) {
+  /* (A) BREAK INTO VERTICAL MENU */
+  #hamitems a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #333; }
+  /* (B) SHOW HAMBURGER ICON */
+  #hamnav label {
+    display: inline-block;
+    color: white;
+    background: #2F2A2C;
+    font-style: normal;
+    font-size: 1.2em;
+    padding: 10px; }
+  /* (C) TOGGLE SHOW/HIDE MENU */
+  #hamitems {
+    display: none; }
+  #hamnav input:checked ~ #hamitems {
+    position: absolute;
+    z-index: 999 !important;
+    background-color: white;
+    width: 100%;
+    top: 100px;
+    left: 0%;
+    display: inline; } }
+
 /* Hero (TITULARES Y/O PORTADAS) */
 .hero__home, .hero__home--author, .hero__home--about--nft, .hero__home--future--projects, .hero__home--contact {
   grid-area: hero;
+  z-index: -1;
   text-align: center;
   margin: 20px auto 0 auto;
   width: 90%; }
